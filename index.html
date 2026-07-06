@@ -5,71 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>benebeck.com — under construction</title>
 <meta name="description" content="benebeck.com is under construction.">
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-
-  :root {
-    --bg: #F2EAD9;
-    --card: #FAF5EA;
-    --line: #DFD3BC;
-    --ink: #3A332A;
-    --ink-dim: #8F836F;
-    --accent: #D97B3F;
-    --accent-dim: #C0632A;
-  }
-  :root[data-theme="dark"] {
-    --bg: #211F1D;
-    --card: #2A2724;
-    --line: #3C3733;
-    --ink: #EDE6DA;
-    --ink-dim: #A79E92;
-    --accent: #5AA99A;
-    --accent-dim: #3E7267;
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Inter', sans-serif;
-    transition: background 0.2s ease, color 0.2s ease;
-    display: flex;
-    flex-direction: column;
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 24px;
-  }
-  .logo {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: -0.01em;
-    color: inherit;
-    text-decoration: none;
-  }
-  .theme-toggle {
-    background: var(--card);
-    border: 1px solid var(--line);
-    color: var(--ink-dim);
-    width: 32px;
-    height: 32px;
-    border-radius: 7px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-  }
-  .theme-toggle:hover { color: var(--accent); border-color: var(--accent-dim); }
-
   main {
     flex: 1;
     display: flex;
@@ -79,22 +17,23 @@
     text-align: center;
     padding: 24px;
   }
-  .eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12.5px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin: 0 0 14px;
-  }
   h1 {
     font-family: 'Fraunces', serif;
     font-weight: 600;
     font-size: clamp(32px, 6vw, 48px);
     line-height: 1.1;
-    margin: 0;
+    margin: 0 0 22px;
     letter-spacing: -0.01em;
   }
+  .about-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13.5px;
+    color: var(--ink-dim);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--line);
+    padding-bottom: 2px;
+  }
+  .about-link:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
 </style>
 </head>
 <body>
@@ -107,20 +46,10 @@
 <main>
   <p class="eyebrow">Under construction</p>
   <h1>Something's coming together.</h1>
+  <a class="about-link" href="about.html">→ but you can read a bit about me</a>
 </main>
 
-<script>
-  const toggle = document.getElementById('theme-toggle');
-  const stored = localStorage.getItem('benebeck-theme');
-  if (stored) document.documentElement.setAttribute('data-theme', stored);
-
-  toggle.onclick = () => {
-    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('benebeck-theme', next);
-  };
-</script>
+<script src="theme.js"></script>
 
 </body>
 </html>

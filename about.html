@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benedikt Beck — benebeck.com</title>
+<meta name="description" content="Benedikt Beck — Product Manager @ HOCHTIEF / TOUGH Training GmbH.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<style>
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+  .about {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    max-width: 780px;
+  }
+  .about-photo {
+    width: 220px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    flex-shrink: 0;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(32px, 5vw, 44px);
+    line-height: 1.1;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+  .role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--accent);
+    margin: 0 0 20px;
+  }
+  .bio {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-dim);
+    max-width: 460px;
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .about { flex-direction: column; text-align: center; gap: 28px; }
+    .about-photo { width: 180px; height: 270px; }
+    .bio { max-width: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/">benebeck.com</a>
+  <button class="theme-toggle" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">◐</button>
+</header>
+
+<main>
+  <div class="about">
+    <img class="about-photo" src="assets/benedikt-beck.jpg" alt="Benedikt Beck">
+    <div>
+      <p class="eyebrow">About</p>
+      <h1>Benedikt Beck</h1>
+      <p class="role">Product Manager @ HOCHTIEF / TOUGH Training GmbH</p>
+      <p class="bio">
+        I lead product for a web/desktop training platform, working with
+        an interdisciplinary development team to turn strategy into
+        shipped features. My path here went through software development
+        and running a company, so I tend to think about product from both
+        the engineering and the business side.
+      </p>
+    </div>
+  </div>
+</main>
+
+<script src="theme.js"></script>
+
+</body>
+</html>
