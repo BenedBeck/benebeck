@@ -117,6 +117,28 @@
     color: #868686;
     margin: 0;
   }
+
+  @media (max-width: 900px) {
+    .hero {
+      flex-direction: column;
+      gap: 40px;
+      padding: 80px 24px 60px;
+    }
+    .hero-photo {
+      width: 100%;
+      height: auto;
+      max-height: 60vh;
+    }
+    .hero-name { font-size: 48px; line-height: 52px; }
+    .hero-about { margin-top: 32px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 70px 20px 48px; }
+    .hero-name { font-size: 34px; line-height: 38px; }
+    .hero-bio { max-width: 100%; }
+    .cv-list { margin-top: 40px; max-width: 100%; }
+  }
 </style>
 </head>
 <body>
