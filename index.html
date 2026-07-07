@@ -3,61 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>benebeck.com — under construction</title>
-<meta name="description" content="benebeck.com is under construction.">
+<title>Benedikt Beck — benebeck.com</title>
+<meta name="description" content="Benedikt Beck — Product Manager @ HOCHTIEF / TOUGH Training GmbH.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css">
 <style>
-  main {
-    flex: 1;
+  @font-face {
+    font-family: 'Geist';
+    src: url('assets/fonts/Geist-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    min-height: 100vh;
+    background: #1A1918;
+    color: #fff;
+    font-family: 'Geist', sans-serif;
     display: flex;
     flex-direction: column;
+  }
+
+  header {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 24px;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 24px;
   }
-  h1 {
-    font-family: 'Geist', sans-serif;
-    font-weight: 600;
-    font-size: 42px;
-    line-height: 1.1;
-    margin: 0 0 22px;
-    letter-spacing: -0.01em;
-  }
-  .about-link {
+  .logo {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13.5px;
-    color: var(--ink-dim);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    color: #fff;
     text-decoration: none;
-    border-bottom: 1px dashed var(--line);
+  }
+  nav.nav {
+    display: flex;
+    gap: 18px;
+  }
+  nav.nav a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #868686;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
     padding-bottom: 2px;
   }
-  .about-link:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+  nav.nav a:hover,
+  nav.nav a.active {
+    color: #fff;
+    border-bottom-color: #fff;
+  }
+
+  main {
+    flex: 1;
+    padding: 125px 40px 60px;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+    margin: 0;
+    max-width: 625px;
+  }
+  h1 .gray { color: #868686; font-weight: 400; }
+
+  .learn-link {
+    display: inline-block;
+    margin-top: 48px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13.5px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 3px;
+  }
+  .learn-link:hover { color: #868686; border-bottom-color: #868686; }
 </style>
 </head>
 <body>
 
 <header>
   <a class="logo" href="/">benebeck.com</a>
-  <div class="header-right">
-    <nav class="nav">
-      <a href="about.html">About</a>
-    </nav>
-    <button class="theme-toggle" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">◐</button>
-  </div>
+  <nav class="nav">
+    <a href="about.html">About</a>
+  </nav>
 </header>
 
 <main>
-  <p class="eyebrow">Under construction</p>
-  <h1>Something's coming together.</h1>
-  <a class="about-link" href="about.html">→ but you can read a bit about me</a>
+  <h1>I&rsquo;m Benedikt Beck, a product manager @HOCHTIEF / TOUGH Training GmbH.<span class="gray"> I lead product for a web/desktop training platform, working with an interdisciplinary development team to turn strategy into shipped features.</span></h1>
+  <a class="learn-link" href="about.html">learn more about me</a>
 </main>
-
-<script src="theme.js"></script>
 
 </body>
 </html>

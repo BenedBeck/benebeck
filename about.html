@@ -8,90 +8,153 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
 <style>
-  main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 24px;
+  @font-face {
+    font-family: 'Geist';
+    src: url('assets/fonts/Geist-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
   }
-  .about {
-    display: flex;
-    align-items: center;
-    gap: 56px;
-    max-width: 780px;
-  }
-  .about-photo {
-    width: 220px;
-    height: 330px;
-    object-fit: cover;
-    border-radius: 14px;
-    border: 1px solid var(--line);
-    flex-shrink: 0;
-  }
-  h1 {
-    font-family: 'Geist', sans-serif;
-    font-weight: 600;
-    font-size: 42px;
-    line-height: 1.1;
-    margin: 0 0 10px;
-    letter-spacing: -0.01em;
-  }
-  .role {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    color: var(--accent);
-    margin: 0 0 20px;
-  }
-  .bio {
-    font-size: 16px;
-    line-height: 1.65;
-    color: var(--ink-dim);
-    max-width: 460px;
+  * { box-sizing: border-box; }
+  html, body {
     margin: 0;
+    background: #1A1918;
+    color: #fff;
+    font-family: 'Geist', sans-serif;
   }
 
-  @media (max-width: 640px) {
-    .about { flex-direction: column; text-align: center; gap: 28px; }
-    .about-photo { width: 180px; height: 270px; }
-    .bio { max-width: none; }
+  .back-link {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #868686;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+  }
+  .back-link:hover { color: #fff; }
+
+  .hero {
+    display: flex;
+    align-items: flex-start;
+    gap: 215px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  .hero-photo {
+    width: 548px;
+    height: 730px;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+  }
+  .hero-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-name {
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 70px;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .hero-name span { display: block; }
+
+  .hero-about {
+    margin-top: 321px;
+  }
+  .hero-label {
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 500;
+    margin: 0 0 12px;
+  }
+  .hero-bio {
+    font-size: 16px;
+    line-height: 21px;
+    color: #868686;
+    margin: 0;
+    max-width: 356px;
+  }
+
+  .cv-list {
+    margin-top: 59px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    max-width: 480px;
+  }
+  .cv-entry {
+    padding-top: 20px;
+    border-top: 1px solid #343434;
+  }
+  .cv-entry:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+  .cv-role {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 3px;
+  }
+  .cv-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #868686;
+    margin: 0 0 10px;
+  }
+  .cv-desc {
+    font-size: 14px;
+    line-height: 20px;
+    color: #868686;
+    margin: 0;
   }
 </style>
 </head>
 <body>
 
-<header>
-  <a class="logo" href="/">benebeck.com</a>
-  <div class="header-right">
-    <nav class="nav">
-      <a href="about.html" class="active">About</a>
-    </nav>
-    <button class="theme-toggle" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">◐</button>
-  </div>
-</header>
+<a class="back-link" href="/">← home</a>
 
-<main>
-  <div class="about">
-    <img class="about-photo" src="assets/benedikt-beck.jpg" alt="Benedikt Beck">
-    <div>
-      <p class="eyebrow">About</p>
-      <h1>Benedikt Beck</h1>
-      <p class="role">Product Manager @ HOCHTIEF / TOUGH Training GmbH</p>
-      <p class="bio">
-        I lead product for a web/desktop training platform, working with
-        an interdisciplinary development team to turn strategy into
-        shipped features. My path here went through software development
-        and co-running a company, so I tend to think about product from both
-        the engineering and the business side.
-      </p>
+<div class="hero">
+  <img class="hero-photo" src="assets/benedikt-beck.jpg" alt="Beck Benedikt">
+  <div class="hero-text">
+    <h1 class="hero-name"><span>Beck</span><span>Benedikt</span></h1>
+    <div class="hero-about">
+      <p class="hero-label">Leading Tech Teams</p>
+      <p class="hero-bio">I lead product for a web/desktop training platform, working with an interdisciplinary development team to turn strategy into shipped features.</p>
+    </div>
+    <div class="cv-list">
+      <div class="cv-entry">
+        <p class="cv-role">Product Manager</p>
+        <p class="cv-meta">HOCHTIEF PPP Solutions / TOUGH Training GmbH — 02/2025–Present</p>
+        <p class="cv-desc">Own product strategy for a VR/web/desktop training platform, aligning the roadmap with corporate strategy. Lead a 9-person interdisciplinary engineering team across release planning, backlog prioritization, and QA. Manage strategic accounts including Deutsche Bahn and HOCHTIEF, presenting progress at management level.</p>
+      </div>
+      <div class="cv-entry">
+        <p class="cv-role">Managing Director &amp; Product Lead</p>
+        <p class="cv-meta">TOUGH Training GmbH — 11/2023–01/2025</p>
+        <p class="cv-desc">Held full responsibility for product, engineering, and operations. Scaled the development team from 2 to 9 and cut development time per training module by ~50% through process and tooling improvements. Ran sales single-handedly until building a dedicated sales structure, and led the company through its acquisition by HOCHTIEF PPP Solutions.</p>
+      </div>
+      <div class="cv-entry">
+        <p class="cv-role">Project Manager &amp; Team Lead Development</p>
+        <p class="cv-meta">TOUGH Training GmbH — 01/2023–11/2023</p>
+        <p class="cv-desc">Planned and steered all client and development projects, introducing structured epic and milestone planning. Prioritized internal and external requirements and led the development team, including technical architecture decisions.</p>
+      </div>
+      <div class="cv-entry">
+        <p class="cv-role">Junior Software Developer</p>
+        <p class="cv-meta">TOUGH Training GmbH — 05/2022–01/2023</p>
+        <p class="cv-desc">Built interactive first-person scenarios in Unity (C#) and developed the core interaction systems that became the technical foundation of the product.</p>
+      </div>
     </div>
   </div>
-</main>
-
-<script src="theme.js"></script>
+</div>
 
 </body>
 </html>
